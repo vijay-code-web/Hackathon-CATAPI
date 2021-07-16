@@ -1,0 +1,131 @@
+/* THIS PART STYLINHG FOR MAIN CONTENT AREA AND BACKGROUND OF THE WINDOW*/
+
+body {
+    font-family: sans-serif;
+    background-color: #11dac9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #eee;
+    margin-bottom: 30px;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    max-height: 500px;
+    text-align: center;
+}
+
+#catList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.cat {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'id'
+        'created_at'
+        'tags';
+    text-align: left;
+}
+
+.cat > h2 {
+    grid-area: id;
+    margin-top: 10px;
+}
+
+.cat > h4 {
+    grid-area: created_at;
+    margin-bottom: 10px;
+}
+
+.cat > p {
+    grid-area: tags;
+    margin: 0;
+    margin-top: 10px;
+}
+
+/* IN THIS BELOW IMAGE PART I ADD IMAGE TO EACH AND EVERY CAT BOX EVERY TIME WE REFRESH IT NEW CAT IMAGE SHOWS : JUST TRIED*/
+
+/*.cat > img {                              
+    max-height: 75px;
+    max-width: 75px;
+    grid-area: image;
+}*/  
+
+/* THIS PART STYLINHG FOR SEARCH BAR */
+
+#searchBar {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+
+/* THIS PART STYLINHG FOR POPUP CONTENT */
+/* inside this content an image shows every time we refresh it it shows different cat images , reference from the link : https://cataas.com/#/integration  &  and  the link atached for image : https://cataas.com/cat/id*/
+   
+  .popup .content {
+    position:sticky;
+    top:50%;
+    left:50%;
+    transform:translate(100%,-100%) scale(0);
+    background:#fff;
+    width:100%;
+    max-width:500px;
+    height:250px;
+    z-index:0;
+    text-align:center;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
+    
+  }
+ 
+  .popup.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-100%,-100%) scale(1);
+  }
+
+  /* THIS PART STYLINHG FOR POPUP BUTTON*/
+   
+  button {
+    position:absolute;
+    top:0%;
+    left:0%;
+    transform:translate(40%,40%);
+    padding:15px;
+    font-size:18px;
+    border:2px solid #222;
+    color:#222;
+    text-transform:uppercase;
+    font-weight:500;
+    background:#fff;
+  }
+  
